@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site Simples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+        .content {
+            padding: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Meu Site Simples</h1>
+</header>
+
+<nav>
+    <a href="#" onclick="showSection('inicio')">Início</a>
+    <a href="#" onclick="showSection('sobre')">Sobre Mim</a>
+</nav>
+
+<div class="content">
+    <div id="inicio" class="section">
+        <h2>Bem-vindo ao meu site!</h2>
+        <p>Este é um site simples para demonstrar abas.</p>
+    </div>
+    <div id="sobre" class="section hidden">
+        <h2>Sobre Mim</h2>
+        <p>Feito por Wilhian para Alura.</p>
+    </div>
+</div>
+
+<script>
+    function showSection(section) {
+        // Esconde todas as seções
+        var sections = document.querySelectorAll('.section');
+        sections.forEach(function(sec) {
+            sec.classList.add('hidden');
+        });
+        // Mostra a seção selecionada
+        document.getElementById(section).classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
